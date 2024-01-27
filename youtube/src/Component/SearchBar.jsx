@@ -1,8 +1,8 @@
 
-const SearchBar = () => {
+ const SearchBar = () => {
   return (
     <>
-       <input
+   <input
     type="text"
     className="w-full border p-2 border-black rounded-l-full focus:outline-none"
     placeholder="Search"

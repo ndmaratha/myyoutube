@@ -1,13 +1,15 @@
-import SideBar from "./SideBar"
+import { useSelector } from "react-redux";
+import SideBar from "./SideBar";
 import VideoList from "./VIdeoList";
 
 const Body = () => {
-  return (
-    <div className="flex ">
-      <SideBar/>
-      <VideoList/>
-    </div>
-  )
-}
+	const item = useSelector((store) => store.menu.item);
+	return (
+		<div className="flex ">
+			{item && <SideBar />}
+			<VideoList />
+		</div>
+	);
+};
 
 export default Body;

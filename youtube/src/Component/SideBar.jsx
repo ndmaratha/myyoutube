@@ -12,16 +12,24 @@ import SportsEsportsIcon from '@mui/icons-material/SportsEsports';
 import LiveTvIcon from '@mui/icons-material/LiveTv';
 import MusicNoteIcon from '@mui/icons-material/MusicNote';
 import SportsSoccerIcon from '@mui/icons-material/SportsSoccer';
-
+import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 const SideBar = () => {
+  const item=useSelector(store=>store.menu.item);
+
   return (
-    <List className=" p-4 ">
+    <>  
+    {
+      item &&
+     <List className=" p-4 ">
+          <Link to={"/"}>
       <ListItem button>
         <ListItemIcon>
-          <HomeIcon />
+      <HomeIcon />
         </ListItemIcon>
         <ListItemText primary="Home" />
       </ListItem>
+      </Link>
       <ListItem button>
         <ListItemIcon>
           <SubscriptionsIcon />
@@ -34,7 +42,7 @@ const SideBar = () => {
         </ListItemIcon>
         <ListItemText primary="Shorts" />
       </ListItem>
-      <div className='border-b border-black'></div>
+     
       <ListItem button>
         <ListItemIcon>
           <LibraryAddIcon />
@@ -90,6 +98,9 @@ const SideBar = () => {
         <ListItemText primary="Sports" />
       </ListItem>
     </List>
+    }
+    </>
+
   );
 };
 
