@@ -5,6 +5,7 @@ import Header from "./Component/Header";
 import { Provider } from "react-redux";
 import store from "./Redux/store";
 import Watch from "./Component/Watch";
+import SearchResult from "./Component/SearchResult";
 
 
 function App() {
@@ -12,7 +13,6 @@ function App() {
 		<>
 			<Provider store={store}>
 				<Header />
-				
 				<Outlet />
 			</Provider>
 		</>
@@ -30,6 +30,10 @@ export const appRouter = createBrowserRouter([
 			{
 				path: "/watch/:id",
 				element: <Watch />,
+			},
+			{
+				path: "/SearchResult/:q",
+				element: <SearchResult />,
 			},
 		],
 	},

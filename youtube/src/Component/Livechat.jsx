@@ -30,6 +30,7 @@ const Livechat = () => {
 				cmt: shortName,
 			};
 			dispatch(addComent(newComment));
+			
 		}, 1000);
 
 		return () => {
